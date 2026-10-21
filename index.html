@@ -2,38 +2,95 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Acadêmico</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Acadêmico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Sistema Acadêmico</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="atualizar.php">Atualizar Cadastro</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="consultar.php">Consultar Cadastro</a>
-        </li>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary " style="background-color: #97ea9b;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Sistema Acadêmico</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="atualizar.php">Atualizar Cadastro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="consultar.php">Consultar Cadastro</a>
+          </li>
         </ul>
-      <form class="d-flex" role="search">
-        
-        <a class="btn btn-outline-success" href="cadastro.php">Entrar</a>
-      </form>
+        <form class="d-flex" role="search">
+
+          <a class="btn btn-outline-success" href="cadastro.php">Cadastrar Aluno</a>
+        </form>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+
+  <main class="container flex-grow-1">
+    <!-- Cards  -->
+
+    <section class="container text-center mt-5 py-5">
+      <div>
+        <h2 class="fw-bold">Sistema Academico</h2>
+        <p class="text-secondary">Gerencie o cadastro de alunos de forma eficiente.</p>
+      </div>
+
+      <div class="row mb-5 g-5 align-items-center justify-content-center">
+        <div class="col col-md">
+          <!-- Card 01 -->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <i class="bi bi-flower3 text-success" style="font-size: 4rem;"></i>
+              <h5 class="card-title">Atualizar Cadastro</h5>
+              <p class="card-text">Edite informações existentes dos alunos.</p>
+              <a class="btn btn-outline-success" href="atualizar.php">Atualizar Cadastro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md">
+          <!-- Card 02 -->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <i class="bi bi-basket text-success" style="font-size: 4rem;"></i>
+              <h5 class="card-title">Consultar Cadastro</h5>
+              <p class="card-text">Visualize informações sobre os alunos cadastrados.</p>
+              <a class="btn btn-outline-success" href="consultar.php">Consultar Cadastro</a>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md">
+          <!-- Card 03 -->
+          <div class="card" style="width: 15rem;">
+            <div class="card-body">
+              <i class="bi bi-tools text-success" style="font-size: 4rem;"></i>
+              <h5 class="card-title">Cadastrar Aluno</h5>
+              <p class="card-text">Registre novos alunos no sistema.</p>
+              <a class="btn btn-outline-success" href="cadastro.php">Cadastrar Aluno</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer mt-auto py-3" style="background-color: #97ea9b;">
+    <div class="container text-center">
+      <p class="text-secondary mb-0">
+        &copy; 2024 Sistema Acadêmico. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
 
 
 
@@ -41,9 +98,9 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 
 </body>
 

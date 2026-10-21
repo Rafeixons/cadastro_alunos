@@ -7,7 +7,7 @@ if (isset($_POST['atualizar'])) {
     $nome = $_POST['nome'];
     $curso = $_POST['curso'];
 
-    $atualizar = "UPDATE matricula SET nome = '$nome', curso = '$curso' WHERE id_matricula = '$id_matricula'";
+    $atualizar = "UPDATE matricula SET nome = '$nome', curso = '$curso' WHERE id_matricula = '$idMatricula'";
 
     if (mysqli_query($conexao, $atualizar)) {
         echo "
@@ -78,7 +78,7 @@ if (isset($_GET['apagar'])) {
     <main class="container min-vh-100 d-flex justify-content-center align-items-center p-8">
         <div class="card shadow-sm w-100" style="max-width: 948px; padding: 25px;">
             <div class="card-body p-50"></div>
-            <h1 class="text-center text-primary">Consulta de Alunos</h1>
+            <h1 class="text-center text-primary">Atualização de Alunos</h1>
 
 
             <h2>Lista de Alunos</h2>
@@ -115,39 +115,40 @@ if (isset($_GET['apagar'])) {
                             </td>
 
                             <td>
-                                <a href="?edita=<?= $array['id_matricula'] ?>">Editar</a>
+                                <a href="?editar=<?= $array['id_matricula'] ?>" class="btn btn-warning">Editar</a>
+                                <a href="?apagar=<?= $array['id_matricula'] ?>" class="btn btn-danger"
+                                    onclick="return confirm('Tem certeza que deseja excluir?')">Apagar</a>
                             </td>
                         </tr>
-
-                        <td>
-                                <a href="?editaAluno=<?= $array['id_matricula'] ?>" class="btn btn-warning">Editar</a>
-                                <a href="?deletar=<?= $array['id_matricula'] ?>" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')">Apagar</a>
-                            </td>
-
 
 
                     <?php } ?>
 
                 </tbody>
 
+                <div class="card shadow-sm w-100" style="max-width: 948px; padding: 25px;">
+                    <div class="card-body p-50"></div>
+                    <?php if ($editaAluno): ?>
+                        <h3>Editar Aluno</h3>
 
-                <?php if ($editaAluno): ?>
-                    <h3>Editar Aluno</h3>
+                        <form method="POST">
+                            <input type="hidden" name="id_matricula" value="<?= $editaAluno['id_matricula'] ?>">
 
-                    <form method="POST">
-                        <input type="hidden" name="id_matricula" value="<?= $editaAluno['id_matricula'] ?>">
+                            <label for="">Nome: </label>
+                            <input type="text" name="nome" class="form-control" value="<?= $editaAluno['nome'] ?>">
 
-                        <label for="">Nome: </label>
-                        <input type="text" name="nome" value="<?= $editaAluno['nome'] ?>">
-
-                        <label for="">Curso: </label>
-                        <input type="text" name="curso" value="<?= $editaAluno['curso'] ?>">
-
-                        <button type="submit" name="atualizar">Atualizar</button>
-                        <a href="atualizar.php">Cancelar</a>
-                    </form>
-                <?php endif; ?>
-
+                            <label for="">Curso: </label>
+                            <input type="text" name="curso" class="form-control" value="<?= $editaAluno['curso'] ?>">
+                            <br>
+                            <br>
+                            <div>
+                                <a href="?editar=<?= $array['id_matricula'] ?>" class="btn btn-warning">Editar</a>
+                                <button type="submit" name="atualizar" class="btn btn-info">Atualizar</button>
+                                <a href="atualizar.php" class="btn btn-secondary">Cancelar</a>
+                            </div>
+                        </form>
+                    <?php endif; ?>
+                </div>
             </table>
 
             <div class="container justify-content-left align-items-left">
@@ -160,8 +161,8 @@ if (isset($_GET['apagar'])) {
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    </body>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+</body>
 
 </html>

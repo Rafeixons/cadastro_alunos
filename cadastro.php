@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    $nome = $_POST['aluno'];
+    $nome = $_POST['nome'];
     $curso = $_POST['curso'];
 
     require("conexao.php");
@@ -44,26 +44,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     <main class="container min-vh-100 d-flex justify-content-center align-items-center">
         <div class="card shadow-sm w-100" style="max-width: 420px;">
-            <div class="card-body p-4"></div>
-
-
-
             <div class="card-body p-4">
                 <h2>Cadastro de Cursos</h2>
-                <form>
+                <form method="post">
                     <div class="mb-3" method="POST" action="">
                         <label for="exampleInputEmail1" class="form-label container">Nome do Aluno: </label>
-                        <input type="text" class="form-control " id="aluno" name="aluno" required>
+                        <input type="text" class="form-control" name= "nome" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1 " class="form-label container">Curso: </label>
-                        <input type="text" class="form-control " id="curso" name="curso" required>
+                        <input type="text" class="form-control" name="curso" required>
                     </div>
                     <button type="reset" class="btn btn-primary">Limpar</button>
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
 
                     <a href="index.html" class="btn btn-primary align-items-right">Voltar</a>
-
+                </form>
             </div>
         </div>
 
